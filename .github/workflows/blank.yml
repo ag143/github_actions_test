@@ -29,11 +29,12 @@ jobs:
       - name: Run a one-line script
         env:
           WHO_TO_TRUST: ${{ secrets.SECRET_TOKEN }}
-          WHO_TO_TRUST1: ${{'${WHO_TO_TRUST}'=='SECRET_TOKEN_VALUE'}}
+          WHO_TO_TRUST1: ${{'${WHO_TO_TRUST}'=='VALUE'}}
           booleannumcheck: ${{1==1}}
           booleanCharcheck: ${{'1'=='1'}}
+          booleanconditionStringCheck: ${{'${WHO_TO_TRUST}'=='VALUE'}}
         
-        run: echo "secret working---> ${WHO_TO_TRUST} and ${WHO_TO_TRUST1} and ${booleannumcheck}and ${booleanCharcheck}"
+        run: echo "secret working---> ${WHO_TO_TRUST} and ${WHO_TO_TRUST1} and ${booleannumcheck}and ${booleanCharcheck} and ${booleanconditionStringCheck}"
         
 
       # Runs a set of commands using the runners shell
