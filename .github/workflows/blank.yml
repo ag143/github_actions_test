@@ -44,5 +44,5 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          secrevariable='${WHO_TO_TRUST}'
-          echo '${secrevariable} checking'
+          secrevariable="${WHO_TO_TRUST}"
+          echo "${secrevariable} checking"
