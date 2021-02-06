@@ -38,8 +38,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         env:
-          WHO_TO_TRUST: ${{ secrets.SECRET_TOKEN }}
-          WHO_TO_TRUST1: ${{'${WHO_TO_TRUST}'=='SECRET_TOKEN_VALUE'}}
+          WHO_TO_TRUST: ${{secrets.SECRET_TOKEN}}
+          WHO_TO_TRUST1: ${{'${WHO_TO_TRUST}'=='VALUE'}}
           booleancheck: ${{1==1}}
         run: |
           echo Add other actions to build,
