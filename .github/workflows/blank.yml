@@ -46,3 +46,4 @@ jobs:
           echo test, and deploy your project.
           secrevariable="${WHO_TO_TRUST}"
           echo "${secrevariable} checking"
+          expr length ${secrevariable}
