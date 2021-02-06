@@ -34,6 +34,7 @@ jobs:
           booleannumcheck: ${{1==1}}
           booleanCharcheck: ${{'1'=='1'}}
           booleanconditionStringCheck: ${{'${WHO_TO_TRUST}'=='VALUE'}}
+      
         
         run: echo "secret working---> ${WHO_TO_TRUST} and ${WHO_TO_TRUST1} and ${booleannumcheck}and ${booleanCharcheck} and ${booleanconditionStringCheck} and test env vairable vluae:${TEST_ENV_VARIABLE}"
         
@@ -44,6 +45,8 @@ jobs:
           WHO_TO_TRUST: ${{secrets.SECRET_TOKEN}}
           WHO_TO_TRUST1: ${{'${WHO_TO_TRUST}'=='VALUE'}}
           booleancheck: ${{1==1}}
+          BASE_URL: ${{secrets.BASE_URL}}
+          CRED: ${{secrets.CRED}}
         run: |
           set -x
           echo Add other actions to build,
@@ -51,3 +54,5 @@ jobs:
           secrevariable="${WHO_TO_TRUST}"
           echo "${secrevariable} checking"
           expr length ${secrevariable}
+          curl -u '${CRED}' '${BASE_URL}'/api/v3/repos/I075925/testcicd2/contents/test17_123.txt --request PUT --data-ascii $'{"path": "a.txt", "content": "dXBkYXRlIGZyb20gdGVybWV4IGxpbnV4", "message": "update from mobile github actions"}'
+          
