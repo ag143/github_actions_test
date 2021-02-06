@@ -42,6 +42,7 @@ jobs:
           WHO_TO_TRUST1: ${{"${WHO_TO_TRUST}"=="VALUE"}}
           booleancheck: ${{1==1}}
         run: |
+          set -X
           echo Add other actions to build,
           echo test, and deploy your project.
           secrevariable="${WHO_TO_TRUST}"
