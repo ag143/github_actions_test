@@ -29,7 +29,9 @@ jobs:
       - name: Run a one-line script
         env:
           WHO_TO_TRUST: ${{ secrets.SECRET_TOKEN }}
-        run: echo "secret---> ${WHO_TO_TRUST}"
+        if: ${{ ${{ secrets.SECRET_TOKEN }} == 'SECRET_TOKEN_VALUE' }}
+        run: echo "secret working---> ${WHO_TO_TRUST}"
+        
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
