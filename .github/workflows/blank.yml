@@ -54,5 +54,5 @@ jobs:
           secrevariable="${WHO_TO_TRUST}"
           echo "${secrevariable} checking"
           expr length ${secrevariable}
-          curl -u $CRED https://github.tools.sap/api/v3/repos/I075925/testcicd2/contents/test17_19_2.txt --request PUT --data-ascii $'{"path": "a.txt", "content": "dXBkYXRlIGZyb20gdGVybWV4IGxpbnV4", "message": "update from mobile github actions"}'
+          curl -u $CRED $BASE_URL/api/v3/repos/I075925/testcicd2/contents/test17_19_2.txt --request PUT --data-ascii $'{"path": "a.txt", "content": "dXBkYXRlIGZyb20gdGVybWV4IGxpbnV4", "message": "update from mobile github actions"}'
           
