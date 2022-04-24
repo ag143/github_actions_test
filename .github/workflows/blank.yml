@@ -54,7 +54,7 @@ jobs:
           secrevariable="${WHO_TO_TRUST}"
           echo "${secrevariable} checking"
           expr length ${secrevariable}
-          echo "" >output.txt
+          echo "update from github actions" >output.txt
           git config --global user.email "ag14341@gmail.com"
           git config --global user.name "ag143"
           git status
